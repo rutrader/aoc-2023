@@ -1,0 +1,22 @@
+{
+  "name": "aoc-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rutrader/aoc-2023.git"
+  },
+  "author": "Ruslan Ishemgulov <ruslan.ishemgulov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rutrader/aoc-2023/issues"
+  },
+  "homepage": "https://github.com/rutrader/aoc-2023#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
