@@ -10,3 +10,5 @@ foreach ($linesArray as $line) {
 }
 
 echo array_sum($sum);
+
+// answer: 55477

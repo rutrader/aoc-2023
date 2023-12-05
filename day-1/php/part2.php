@@ -35,3 +35,5 @@ foreach($linesArray as $line) {
 }
 
 echo $sum . PHP_EOL;
+
+// answer: 54431
