@@ -1,6 +1,6 @@
 <?php
 
-$inputFile = '../input.txt';
+$inputFile = __DIR__ . '/../input.txt';
 
 function calculate($inputFile) {
     $games = file($inputFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);

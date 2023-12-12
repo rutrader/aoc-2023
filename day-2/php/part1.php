@@ -35,6 +35,8 @@ foreach($games as $index => $game) {
 	}
 }
 
+echo "\n";
+
 var_dump(array_sum(array_keys(array_filter($result, function($item) {
 	return $item === true;
 }))));
