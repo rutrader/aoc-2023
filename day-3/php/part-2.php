@@ -1,6 +1,6 @@
 <?php
 
-$data = file('../input.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$data = file(__DIR__.'/../input.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 $numbers = [];
 $gears = [];
@@ -26,10 +26,6 @@ foreach ($numbers as $number) {
     for ($row = max(0, $number['row'] - 1); $row <= min($height - 1, $number['row'] + 1); $row++) {
         $substr = substr($data[$row], $start, $length);
 
-        if (!$counted && preg_match('/[^\d\.]/', $substr)) {
-            $counted = true;
-        }
-
         preg_match_all('/\*/', $substr, $gearMatches, PREG_OFFSET_CAPTURE);
         foreach ($gearMatches[0] as $gear) {
             $index = $row . '_' . ($start + $gear[1]);
@@ -38,9 +34,8 @@ foreach ($numbers as $number) {
     }
 }
 
-
 $gearRatios = 0;
-foreach ($gears as $gearNumbers) {
+foreach ($gears as $key => $gearNumbers) {
     if (count($gearNumbers) == 2) {
         $gearRatios += array_product($gearNumbers);
     }

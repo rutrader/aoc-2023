@@ -1,6 +1,6 @@
 <?php
 
-$data = file('../input.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$data = file(__DIR__ . '/../demo', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 $numbers = [];
 $gears = [];
@@ -15,7 +15,6 @@ foreach ($data as $row => $line) {
 $width = strlen($data[0]);
 $height = count($data);
 $sum = 0;
-$gears = [];
 
 foreach ($numbers as $number) {
     $counted = false;
@@ -30,12 +29,6 @@ foreach ($numbers as $number) {
         if (!$counted && preg_match('/[^\d\.]/', $substr)) {
             $sum += $number['value'];
             $counted = true;
-        }
-
-        preg_match_all('/\*/', $substr, $gearMatches, PREG_OFFSET_CAPTURE);
-        foreach ($gearMatches[0] as $gear) {
-            $index = $row . '_' . ($start + $gear[1]);
-            $gears[$index][] = $number['value'];
         }
     }
 }
