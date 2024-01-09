@@ -4,28 +4,6 @@ const readline = require("readline");
 
 const arraySum = require('../../utils/js/array_sum');
 
-const readFiles = async (filename) => {
-  const filePath = path.join(__dirname, "../", filename);
-  const fileStream = fs.createReadStream(filePath);
-  const rl = readline.createInterface({
-    input: fileStream, crlfDelay: Infinity,
-  });
-
-  let lines = [];
-
-  rl.on("line", (line) => {
-    lines.push(line);
-  });
-
-  let sum = 0;
-  return new Promise((resolve) => {
-    rl.on("close", () => {
-      resolve(lines);
-    })
-  })
-
-}
-
 function getNumbers(left, right) {
   let leftNumbers = [];
   let rightNumbers = [];
@@ -91,5 +69,5 @@ function part2(lines) {
 }
 
 module.exports = {
-  readFiles, part1, part2,
+  part1, part2,
 };

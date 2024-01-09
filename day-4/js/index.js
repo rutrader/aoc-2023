@@ -1,6 +1,7 @@
 const calc = require("./calc");
+const readFile = require('../../utils/js/readFile')
 
-calc.readFiles('demo')
+readFile('input', 'day-4')
     .then((lines) => {
         console.log(
           calc.part1(lines),
