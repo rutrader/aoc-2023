@@ -1,5 +1,3 @@
-const fs = require('fs')
-
 const HIGH_CARD = 'high-card'
 const ONE_PAIR = 'one-pair'
 const TWO_PAIR = 'two-pair'
